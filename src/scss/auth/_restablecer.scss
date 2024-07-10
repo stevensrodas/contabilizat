@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.restablecer{
+    margin-top: 5rem;
+    .contabilizat{
+        @include m.textoDegradado(v.$rosaClaro);
+    }
+    input[type="submit"]{
+        @include m.boton(v.$rosaClaro, v.$blanco);
+    }
+
+    .acciones{
+        a{
+            color: v.$rosaClaro;
+        }
+    }
+}

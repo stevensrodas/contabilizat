@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-lg {
+    table {
+        width: 100%;
+        margin-top: 4rem;
+        border: solid 1px v.$indigo;
+        font-size: 1.8rem;
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        thead {
+            background-color: v.$indigo;
+            color: v.$blanco;
+
+            th {
+                padding: 2rem 1.5rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+
+        td {
+            padding: 1rem .2rem;
+            border: solid 1px #000;
+        }
+
+        .centrar {
+            text-align: center;
+        }
+
+        td button {
+            color: v.$rojo;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 2.2rem;
+        }
+
+        tbody tr:hover {
+            background: lighten(v.$indigo, 5%);
+            color: v.$blanco;
+        }
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        text-align: right;
+    }
+
+    ul li {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    ul li a {
+        display: block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        background-color: v.$indigo;
+        text-decoration: none;
+
+        &:hover {
+            background-color: lighten(v.$indigo, 15%);
+        }
+    }
+}
+body .swal2-popup{
+    font-size: 1.5rem;
+}
