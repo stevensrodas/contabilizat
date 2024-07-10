@@ -72,7 +72,7 @@
 
         try{
 
-            const url = '/api/usuario/eliminar';
+            const url = `${location.origin}/api/usuario/eliminar`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos
