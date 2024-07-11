@@ -14,6 +14,7 @@
 
 $script = '
 
+    <script src="build/js/desplegar.js"></script>
     <script src="build/js/arregloNIF.js"></script>
     <script src="build/js/cuentaTNIF.js"></script>
     

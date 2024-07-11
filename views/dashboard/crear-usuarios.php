@@ -11,9 +11,6 @@
         <input type="submit" class="boton" value="Crear Usuario">
     </form>
 </div>
-<div class="contenedor-lg">
-    <?php include_once __DIR__ . '/usuarios.php' ?>
-</div>
 
 <?php include_once __DIR__ . '/footer-dashboard.php' ?>
 
@@ -22,6 +19,7 @@
 $script = '
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="build/js/desplegar.js"></script>
     <script src="build/js/usuario.js"></script>
     <script src="build/js/app.js"></script>
 '

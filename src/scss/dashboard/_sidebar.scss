@@ -32,5 +32,35 @@
                 border-radius: .5rem;
             }
         }
+        .usuario,
+        .instituto{
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            ion-icon{
+                transition: transform 0.3s ease;
+            }
+            .usuarios,
+            .institutos {
+                position: absolute; /* Posiciona .almacenes absoluto relativo a .menu */
+                top: 100%; /* Coloca .almacenes justo debajo de .inicio */
+                left: 0; /* Alinea .almacenes al borde izquierdo de .menu */
+                background-color: white; /* Fondo blanco para .almacenes */
+                border: 1px solid #ccc; /* Añade un borde a .almacenes */
+                display: none;
+            }
+        }
+        .usuarios ul,
+        .institutos ul {
+            list-style-type: disc; /* Elimina los puntos de la lista */
+            padding-left: 3rem;
+            color: v.$blanco;
+        }
+        .usuarios li a,
+        .institutos li a {
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            font-size: 1.2rem;
+        }
     }
 }

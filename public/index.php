@@ -37,6 +37,7 @@ $router->post('/crear-instituto', [dashboardController::class, 'crear_instituto'
 $router->get('/instituto', [dashboardController::class, 'instituto']);
 $router->get('/crear-usuarios', [dashboardController::class, 'crear_usuarios']);
 $router->post('/crear-usuarios', [dashboardController::class, 'crear_usuarios']);
+$router->get('/usuarios', [dashboardController::class, 'usuarios']);
 $router->get('/perfil', [dashboardController::class, 'perfil']);
 $router->get('/cambiar-password', [dashboardController::class, 'cambiar_password']);
 $router->post('/cambiar-password', [dashboardController::class, 'cambiar_password']);

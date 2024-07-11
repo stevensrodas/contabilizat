@@ -80,14 +80,15 @@ class dashboardController
     {
         session_start();
         isAuth();
-        $alertas = [];
 
-        $usuario = $_GET['nombre'];
+        $query = "SELECT * FROM usuarios WHERE rol = 2 AND confirmado = 1";
+
+        $instituto = Usuario::consultarSQL($query);
 
         $router->render('dashboard/instituto', [
-            'titulo' => $usuario,
+            'titulo' => 'Listado de Institutos',
             'contenido' => '',
-            'alertas' => $alertas
+            'instituto' => $instituto
         ]);
     }
 
@@ -182,18 +183,6 @@ class dashboardController
             'alertas' => $alertas
         ]);
     }
-
-    public static function inventario(Router $router)
-    {
-        session_start();
-        isAuth();
-        $alertas = [];
-        $router->render('dashboard/inventario', [
-            'titulo' => 'Inventario',
-            'contenido' => '',
-            'alertas' => $alertas
-        ]);
-    }
     public static function crear_usuarios(Router $router)
     {
         session_start();
@@ -238,12 +227,25 @@ class dashboardController
             }
         }
 
+        $router->render('dashboard/crear-usuarios', [
+            'titulo' => 'Crear Usuarios',
+            'contenido' => '',
+            'alertas' => $alertas
+        ]);
+    }
+    public static function usuarios(Router $router){
+
+        session_start();
+        isAuth();
+        $alertas = [];
+
         //Tabla de usuarios
+        $alertas = [];
         $id_admin = $_SESSION['id'];
         $usuarios = Usuario::belongsTo('confirmado', 1);
         $totalPaginas = 0;
         if ($id_admin == 9) {
-            
+
             $registros = count($usuarios);
 
             $registrosPorPagina = 5; // Número de registros por página
@@ -254,26 +256,14 @@ class dashboardController
             $offset = ($paginaActual - 1) * $registrosPorPagina;
 
             $query = "SELECT * FROM usuarios WHERE rol NOT IN (1) AND confirmado = 1 LIMIT $registrosPorPagina OFFSET $offset";
-            
+
             $usuarios = Usuario::consultarSQL($query);
         } else {
             $usuarios = Usuario::belongsTo('usuario_instituto', $id_admin);
         }
 
-        /* if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            
-            $deleted = Usuario::eliminar($id);
-
-            if ($deleted) {
-                
-            }
-        } */
-
-
-
-        $router->render('dashboard/crear-usuarios', [
-            'titulo' => 'Usuarios',
+        $router->render('dashboard/usuarios', [
+            'titulo' => 'Listado de Usuarios',
             'contenido' => '',
             'alertas' => $alertas,
             'usuarios' => $usuarios,
@@ -281,3 +271,4 @@ class dashboardController
         ]);
     }
 }
+

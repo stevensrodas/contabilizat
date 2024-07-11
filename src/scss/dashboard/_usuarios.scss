@@ -1,13 +1,12 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.contenedor-lg {
+.contenedor-sm {
     table {
         width: 100%;
         margin-top: 4rem;
         border: solid 1px v.$indigo;
         font-size: 1.8rem;
-        table-layout: fixed;
         border-collapse: collapse;
 
         thead {
@@ -15,14 +14,14 @@
             color: v.$blanco;
 
             th {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem 1.5rem;
                 font-weight: 700;
                 text-transform: uppercase;
             }
         }
 
         td {
-            padding: 1rem .2rem;
+            padding: 1rem .4rem;
             border: solid 1px #000;
         }
 

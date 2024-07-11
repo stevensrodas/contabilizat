@@ -3,19 +3,33 @@
 
     <nav class="sidebar-nav">
         <a class="<?php echo ($titulo === 'Dashboard') ? 'activo' : '' ?>" href="/dashboard">Inicio</a>
-        <!-- <a class="<?php echo ($titulo === 'Inventario') ? 'activo' : '' ?>" href="/inventario">Inventario</a> -->
-        <!-- <a class="<?php echo ($titulo === 'Crear Producto') ? 'activo' : '' ?>" href="/crear-producto">Crear Producto</a>
-        <a class="<?php echo ($titulo === '') ? 'activo' : '' ?>" href="/">Medidas</a>
-        <a class="<?php echo ($titulo === '') ? 'activo' : '' ?>" href="/">Categorias</a> -->
         <?php if ($_SESSION['rol'] == 1) {
         ?>
-            <a class="<?php echo ($titulo === 'Crea Administrador del Instituto') ? 'activo' : '' ?>" href="/crear-instituto">Instituto</a>
-            <a class="<?php echo ($titulo === 'Usuarios') ? 'activo' : '' ?>" href="/crear-usuarios">Usuarios</a>
+            <a class="instituto">Institutos<ion-icon class="icono_instituto" name="caret-down-outline"></ion-icon></a>
+            <div class="institutos" style="display: none;">
+                <ul>
+                    <li><a class="<?php echo ($titulo === 'Crear Instituto') ? 'activo' : '' ?>" href="/crear-instituto">Crear almacen</a></li>
+                    <li><a class="<?php echo ($titulo === 'Listado de Institutos') ? 'activo' : '' ?>" href="/instituto">Listado de Institutos</a></li>
+                </ul>
+            </div>
+            <a class="usuario">Usuarios<ion-icon class="icono_usuario" name="caret-down-outline"></ion-icon></a>
+            <div class="usuarios" style="display: none;">
+                <ul>
+                    <li><a class="<?php echo ($titulo === 'Crear Usuarios') ? 'activo' : '' ?>" href="/crear-usuarios">Crear Usuarios</a></li>
+                    <li><a class="<?php echo ($titulo === 'Listado de Usuarios') ? 'activo' : '' ?>" href="/usuarios">Listado de Usuarios</a></li>
+                </ul>
+            </div>
         <?php
         } ?>
         <?php if ($_SESSION['rol'] == 2) {
         ?>
-            <a class="<?php echo ($titulo === 'Usuarios') ? 'activo' : '' ?>" href="/crear-usuarios">Usuarios</a>
+            <a class="usuario">Usuarios<ion-icon class="icono_usuario" name="caret-down-outline"></ion-icon></a>
+            <div class="usuarios" style="display: none;">
+                <ul>
+                    <li><a class="<?php echo ($titulo === 'Crear Usuarios') ? 'activo' : '' ?>" href="/crear-usuarios">Crear Usuarios</a></li>
+                    <li><a class="<?php echo ($titulo === 'Listado de Usuarios') ? 'activo' : '' ?>" href="/usuarios">Listado de Usuarios</a></li>
+                </ul>
+            </div>
         <?php
         } ?>
         <a class="<?php echo ($titulo === 'NIC') ? 'activo' : '' ?>" href="/NIC">cuentas T NIC</a>
@@ -23,3 +37,11 @@
         <a class="<?php echo ($titulo === 'Perfil') ? 'activo' : '' ?>" href="/perfil">Perfil</a>
     </nav>
 </aside>
+
+<?php
+
+$script = '
+    <script src="build/js/desplegar.js"></script>
+'
+
+?>

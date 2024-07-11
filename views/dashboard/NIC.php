@@ -14,6 +14,7 @@
 
 $script = '
 
+    <script src="build/js/desplegar.js"></script>
     <script src="build/js/arregloNIC.js"></script>
     <script src="build/js/cuentaTNIC.js"></script>
     
